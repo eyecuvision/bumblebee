@@ -44,7 +44,7 @@ class WindowStream(IDataSource):
 
         return cv2.cvtColor(img, cv2.COLOR_RGBA2RGB)
 
-    def get_cap_props(self):
+    def get_props(self):
         return self.height,self.width,4
 
 

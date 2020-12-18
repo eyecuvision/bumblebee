@@ -1,6 +1,0 @@
-README.md
-setup.py
-not_a_bumblebee.egg-info/PKG-INFO
-not_a_bumblebee.egg-info/SOURCES.txt
-not_a_bumblebee.egg-info/dependency_links.txt
-not_a_bumblebee.egg-info/top_level.txt

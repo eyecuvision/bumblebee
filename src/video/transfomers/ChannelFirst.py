@@ -1,5 +1,5 @@
 import numpy as np
-from src.datamodules.interfaces.ITransformer import ITransformer
+from ..interfaces.ITransformer import ITransformer
 
 
 

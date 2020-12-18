@@ -1,11 +1,11 @@
-from src.datamodules.interfaces.IDataset import IDataset
-from src.datamodules.interfaces.IReadable import IReadable
+from ..interfaces.IDataset import IDataset
+from ..interfaces.IReadable import IReadable
 
 
-from src.datamodules.interfaces.IDataSource import IDataSource
+from ..interfaces.IDataSource import IDataSource
 import torch
 
-from src.datamodules.interfaces.IDataset import IDataset
+from ..interfaces.IDataset import IDataset
 
 
 class VideoDataset(IDataset):

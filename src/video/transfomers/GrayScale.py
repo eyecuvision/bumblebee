@@ -1,4 +1,4 @@
-from src.datamodules.interfaces.ITransformer import ITransformer
+from ..interfaces.ITransformer import ITransformer
 
 class GrayScale(ITransformer):
 

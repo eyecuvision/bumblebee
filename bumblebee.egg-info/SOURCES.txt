@@ -1,0 +1,6 @@
+README.md
+setup.py
+bumblebee.egg-info/PKG-INFO
+bumblebee.egg-info/SOURCES.txt
+bumblebee.egg-info/dependency_links.txt
+bumblebee.egg-info/top_level.txt

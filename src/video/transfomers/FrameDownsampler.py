@@ -1,5 +1,5 @@
-from src.datamodules.interfaces.IDataSource import IDataSource
-from src.datamodules.interfaces.ITransformer import ITransformer
+from ..interfaces.IDataSource import IDataSource
+from ..interfaces.ITransformer import ITransformer
 
 
 class FrameDownsampler(ITransformer):

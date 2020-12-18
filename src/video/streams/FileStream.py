@@ -1,6 +1,6 @@
 import cv2
 
-from src.datamodules.interfaces.IDataSource import IDataSource
+from ..interfaces.IDataSource import IDataSource
 
 
 class FileStream(IDataSource):

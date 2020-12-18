@@ -1,11 +1,11 @@
 import cv2
 
-from src.datamodules.interfaces.IDataSource import IDataSource
-from src.datamodules.streams.FileStream import FileStream
-from src.datamodules.interfaces.ITransformer import ITransformer
+from ..interfaces.IDataSource import IDataSource
+from ..streams.FileStream import FileStream
+from ..interfaces.ITransformer import ITransformer
 
 
-class Loop(IDataSource):
+class FullStream(IDataSource):
 
     def __init__(self, src: FileStream, end_frame: int = -1,start_frame=0):
         super().__init__(src)

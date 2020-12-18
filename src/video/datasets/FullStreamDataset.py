@@ -1,11 +1,8 @@
-
-
-
-from src.datamodules.interfaces.IDataSource import IDataSource
+from ..interfaces.IDataSource import IDataSource
 import torch
 
-from src.datamodules.interfaces.IDataset import IDataset
-from src.datamodules.streams import FullStream
+from ..interfaces.IDataset import IDataset
+from ..streams import FullStream
 
 
 class FullStreamDataset(IDataset):

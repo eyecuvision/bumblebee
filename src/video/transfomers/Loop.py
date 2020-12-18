@@ -1,7 +1,7 @@
 import cv2
 
-from src.datamodules.streams.FileStream import FileStream
-from src.datamodules.interfaces.ITransformer import ITransformer
+from ..streams.FileStream import FileStream
+from ..interfaces.ITransformer import ITransformer
 
 
 class Loop(ITransformer):

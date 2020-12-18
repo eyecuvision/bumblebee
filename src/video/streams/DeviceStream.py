@@ -1,4 +1,4 @@
-from src.datamodules.interfaces.IDataSource import IDataSource
+from ..interfaces.IDataSource import IDataSource
 import cv2
 
 class DeviceStream(IDataSource):

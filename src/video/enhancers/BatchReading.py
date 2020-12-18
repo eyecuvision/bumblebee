@@ -1,8 +1,8 @@
-from src.datamodules.interfaces.IDataSource import IDataSource
+from ..interfaces.IDataSource import IDataSource
 import torch
 
-from src.datamodules.interfaces.IDataset import IDataset
-from src.datamodules.interfaces.IEnhancer import IEnhancer
+from ..interfaces.IDataset import IDataset
+from ..interfaces.IEnhancer import IEnhancer
 
 
 class BatchReading(IEnhancer):

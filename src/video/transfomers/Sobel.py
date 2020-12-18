@@ -1,6 +1,6 @@
 from scipy import ndimage
 
-from src.datamodules.interfaces.ITransformer import ITransformer
+from ..interfaces.ITransformer import ITransformer
 
 
 

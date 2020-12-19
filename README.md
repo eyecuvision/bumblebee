@@ -1,3 +1,3 @@
 # Bumblebee
 
-![alt text](./docs/bumblebee.png)
+![Bumblebee image](./docs/bumblebee.png)

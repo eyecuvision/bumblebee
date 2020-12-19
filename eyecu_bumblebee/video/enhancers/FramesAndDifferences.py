@@ -1,11 +1,10 @@
-from ..interfaces.IDataSource import IDataSource
 import torch
 
 from ..interfaces.IDataset import IDataset
 from ..interfaces.IEnhancer import IEnhancer
 
 
-class FramesAndDifferenceS(IEnhancer):
+class FramesAndDifferences(IEnhancer):
 
     def __init__(self,src : IDataset,batch_size = 64):
 

@@ -1,6 +1,6 @@
 [tool.poetry]
-name = "eyecu_bumblebee"
-version = "0.1.1"
+name = "eyecu-bumblebee"
+version = "0.1.2"
 description = ""
 authors = ["Oguz Vuruskaner <ovuruska@outlook.com>"]
 

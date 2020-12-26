@@ -1,1 +1,1 @@
-![alt text](training_data_pipeline.png)
+![alt text](arch_diagram.png)

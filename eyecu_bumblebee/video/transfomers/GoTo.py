@@ -10,9 +10,7 @@ class GoTo(ITransformer):
         super().__init__(src)
         self.src = src
 
-    def read(self,frame_number=None):
 
-        if frame_number is not None:
-            self.src.cap.set(cv2.CAP_PROP_POS_FRAMES,frame_number)
 
-        return super().read()
+    def goto(self,frame_number : int)
+        self.src.cap.set(cv2.CAP_PROP_POS_FRAMES,float(frame_number))

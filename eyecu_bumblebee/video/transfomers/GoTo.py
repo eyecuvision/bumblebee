@@ -4,7 +4,7 @@ from ..streams.FileStream import FileStream
 from ..interfaces.ITransformer import ITransformer
 
 
-class Loop(ITransformer):
+class GoTo(ITransformer):
 
     def __init__(self, src: FileStream):
         super().__init__(src)

@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "eyecu-bumblebee"
-version = "0.1.6"
+version = "0.1.7"
 description = "Advanced training methods on videos."
 authors = ["Oguz Vuruskaner <ovuruska@outlook.com>"]
 

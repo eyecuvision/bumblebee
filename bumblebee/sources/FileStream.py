@@ -5,11 +5,11 @@ from ..interfaces.ISource import ISource
 
 class FileStream(ISource):
 
-    def __init__(self,filepath:str):
+    def __init__(self, filepath: str):
 
+        super().__init__()
         self.path = filepath
-        self.id = ISource.__ID__
-        ISource.__ID__ +=1
+
         self.cap = cv2.VideoCapture(self.path)
         self.cap.open(0)
 

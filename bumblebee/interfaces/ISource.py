@@ -1,9 +1,14 @@
 import cv2
 
 
-class ISource():
+class ISource:
 
     __ID__ = 1
+
+    def __init__(self):
+        self.id = ISource.__ID__
+        ISource.__ID__ += 1
+        self.cap = None
 
     def read(self):
         ret, frame = self.cap.read()

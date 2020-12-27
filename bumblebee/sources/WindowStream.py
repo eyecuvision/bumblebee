@@ -7,9 +7,9 @@ from ..interfaces.ISource import ISource
 
 class WindowStream(ISource):
 
-    def __init__(self,region = None):
+    def __init__(self, region=None):
 
-
+        super().__init__()
         if region:
             self.left, self.top, x2, y2 = region
             self.width = x2 - self.left + 1

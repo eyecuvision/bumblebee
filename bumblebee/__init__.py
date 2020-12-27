@@ -1,4 +1,4 @@
-__VERSION__ = "0.2.0"
+__VERSION__ = "0.2.1"
 
 
 if __package__ is None or __package__ == '':

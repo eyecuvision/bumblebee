@@ -1,8 +1,22 @@
 [tool.poetry]
 name = "eyecu-bumblebee"
-version = "0.2.0"
+version = "0.2.1"
 description = "Advanced training methods on videos."
 authors = ["Oguz Vuruskaner <ovuruska@outlook.com>"]
+repository = "https://github.com/Eye-C-U/bumblebee/"
+license = "MIT"
+keywords = [
+    "Video Processing",
+    "Dataset",
+    "Torch"
+]
+readme = "README.md"
+packages = [
+    { include = "bumblebee" }
+]
+
+[tool.poetry.scripts]
+hi = "hello:hello"
 
 [tool.poetry.dependencies]
 python = "^3.6"
@@ -13,3 +27,6 @@ pytest = "^5.2"
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.urls]
+issues = "https://github.com/Eye-C-U/bumblebee/issues"

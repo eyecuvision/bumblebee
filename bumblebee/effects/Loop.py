@@ -6,7 +6,6 @@ from ..sources import FileStream
 class Loop(IEffect):
 
     def __init__(self, src: FileStream, end_frame: int = -1,start_frame=0):
-        super().__init__(src)
         self.src = src
         self.end_frame = end_frame
         self.start_frame = start_frame

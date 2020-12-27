@@ -7,7 +7,6 @@ from ..interfaces import IEffect
 class GoTo(IEffect):
 
     def __init__(self, src: FileStream):
-        super().__init__(src)
         self.src = src
 
 

@@ -1,8 +1,7 @@
-__VERSION__ = "0.2.1"
+__VERSION__ = "0.2.2"
 
-
-if __package__ is None or __package__ == '':
-    import video 
-
-else:
-    from .video import *
+from . import datasets
+from . import effects
+from . import interfaces
+from . import sources
+from . import transfomers

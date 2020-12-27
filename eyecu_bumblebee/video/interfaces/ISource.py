@@ -1,7 +1,7 @@
 import cv2
 
 
-class IDataSource():
+class ISource():
 
     __ID__ = 1
 
@@ -9,7 +9,7 @@ class IDataSource():
         ret, frame = self.cap.read()
 
         if not ret:
-            raise Exception("Stream {} :> Cannot get data from source.")
+            raise Exception("Stream {} :> Cannot get data from sources.")
 
         return frame
 

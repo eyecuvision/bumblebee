@@ -1,10 +1,10 @@
-from ..interfaces.IDataSource import IDataSource
+from ..interfaces.ISource import ISource
 from ..interfaces.ITransformer import ITransformer
 
 
 class FrameDownsampler(ITransformer):
 
-    def __init__(self,src : IDataSource, downsample : int=2):
+    def __init__(self, src : ISource, downsample : int=2):
 
         super().__init__(src)
         self.downsample = downsample

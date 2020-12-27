@@ -1,9 +1,9 @@
 import cv2
 
-from ..interfaces.IDataSource import IDataSource
+from ..interfaces.ISource import ISource
 
 
-class WebStream(IDataSource):
+class WebStream(ISource):
 
 
     def __init__(self,url):
@@ -12,8 +12,8 @@ class WebStream(IDataSource):
         self.username = None
         self.password = None
         self.cap = None
-        self.id = IDataSource.__ID__
-        IDataSource.__ID__ +=1
+        self.id = ISource.__ID__
+        ISource.__ID__ +=1
 
 
     def set_credentials(self,username,password):

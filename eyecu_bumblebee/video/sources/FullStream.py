@@ -1,10 +1,11 @@
 import cv2
 
+from ..interfaces.ISource import ISource
 from ..streams.FileStream import FileStream
 from ..interfaces.ITransformer import ITransformer
 
 
-class Loop(ITransformer):
+class FullStream(ISource):
 
     def __init__(self, src: FileStream, end_frame: int = -1,start_frame=0):
         super().__init__(src)
@@ -20,7 +21,10 @@ class Loop(ITransformer):
 
 
         if self.src.cap.get(cv2.CAP_PROP_POS_FRAMES) == self.end_frame:
-            self.src.cap.set(cv2.CAP_PROP_POS_FRAMES,self.start_frame)
+            return None
 
-
-        return super().read()
+        try:
+            frame = self.src.cap.read()
+            return frame
+        except Exception:
+            return None

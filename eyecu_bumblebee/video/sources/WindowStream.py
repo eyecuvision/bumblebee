@@ -2,10 +2,10 @@ import cv2
 import numpy as np
 import win32gui, win32ui, win32con, win32api
 
-from ..interfaces.IDataSource import IDataSource
+from ..interfaces.ISource import ISource
 
 
-class WindowStream(IDataSource):
+class WindowStream(ISource):
 
     def __init__(self,region = None):
 

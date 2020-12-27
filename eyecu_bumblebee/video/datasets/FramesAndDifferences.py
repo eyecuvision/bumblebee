@@ -1,15 +1,13 @@
 import torch
 
 from ..interfaces.IDataset import IDataset
-from ..interfaces.IEnhancer import IEnhancer
 
 
-class FramesAndDifferences(IEnhancer):
+class FramesAndDifferences(IDataset):
 
     def __init__(self,src : IDataset,batch_size = 64):
 
         self.src = src
-        self.dims = self.src.get_props()
 
         self.batch_size = batch_size
         self.frames = []
@@ -19,7 +17,7 @@ class FramesAndDifferences(IEnhancer):
 
 
     def get_props(self):
-        return (self.batch_size,*self.dims)
+        return (self.batch_size,*self.src.get_props())
 
     def __getitem__(self, item):
         return self.__next__()

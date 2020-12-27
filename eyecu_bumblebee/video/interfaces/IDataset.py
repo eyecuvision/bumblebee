@@ -11,8 +11,12 @@ class IDataset:
         abstract
 
     def __next__(self):
-        abstract
+
+        try:
+            data = self.src.read()
+        except Exception:
+            return data
 
 
     def get_props(self):
-        abstract
+        return self.src.get_props()

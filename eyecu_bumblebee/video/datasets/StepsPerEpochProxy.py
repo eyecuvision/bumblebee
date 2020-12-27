@@ -1,8 +1,9 @@
+from ..interfaces import IDataset
 
 
-class StepsPerEpochProxy():
+class StepsPerEpochProxy:
 
-    def __init__(self,src,steps_per_epoch = 300):
+    def __init__(self,src : IDataset,steps_per_epoch = 300):
 
         self.src = src
         self.steps_per_epoch = steps_per_epoch

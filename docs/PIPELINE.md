@@ -1,1 +1,1 @@
-![alt text](arch_diagram.png)
+![alt text](bumblebee_arch_diagram.png)

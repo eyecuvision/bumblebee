@@ -1,15 +1,15 @@
 import cv2
 
-from ..interfaces.IDataSource import IDataSource
+from ..interfaces.ISource import ISource
 
 
-class FileStream(IDataSource):
+class FileStream(ISource):
 
     def __init__(self,filepath:str):
 
         self.path = filepath
-        self.id = IDataSource.__ID__
-        IDataSource.__ID__ +=1
+        self.id = ISource.__ID__
+        ISource.__ID__ +=1
         self.cap = cv2.VideoCapture(self.path)
         self.cap.open()
 

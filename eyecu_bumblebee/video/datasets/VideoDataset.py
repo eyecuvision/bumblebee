@@ -1,20 +1,14 @@
+from typing import Union
+from ..interfaces import ITransformer
+from ..interfaces.ISource import ISource
 from ..interfaces.IDataset import IDataset
-from ..interfaces.IReadable import IReadable
-
-
-from ..interfaces.IDataSource import IDataSource
 import torch
-
-from ..interfaces.IDataset import IDataset
-
 
 class VideoDataset(IDataset):
 
-    def __init__(self,data_source : IDataSource,n_frames = 8):
+    def __init__(self, data_source : Union[ISource,ITransformer], n_frames = 8):
 
         self.src = data_source
-        self.dims = self.src.get_props()
-
 
         self.n_frames = n_frames
         self.frames = []

@@ -1,5 +1,5 @@
 from .IDataset import IDataset
-from .IDataSource import IDataSource
+from .ISource import ISource
 from .IEnhancer import IEnhancer
 from .IReadable import IReadable
 from .ITransformer import ITransformer

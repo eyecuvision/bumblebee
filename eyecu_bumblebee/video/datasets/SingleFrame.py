@@ -1,23 +1,16 @@
-
-
-
-from ..interfaces.IDataSource import IDataSource
 import torch
 
+from typing import Union
+from ..interfaces import ITransformer
+from ..interfaces.ISource import ISource
 from ..interfaces.IDataset import IDataset
 
 
-class SingleFrameDataset(IDataset):
+class SingleFrame(IDataset):
 
-    def __init__(self,data_source : IDataSource):
+    def __init__(self, data_source : Union[ISource,ITransformer]):
 
         self.src = data_source
-        self.dims = self.src.get_props()
-
-
-    def get_props(self):
-
-        return (self.dims)
 
     def __getitem__(self, item):
         return self.__next__()
@@ -25,6 +18,8 @@ class SingleFrameDataset(IDataset):
     def __iter__(self):
         return self
 
+    def get_props(self):
+        return (1,*self.src.get_props())
 
     def __len__(self):
         return 1

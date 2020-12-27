@@ -1,7 +1,7 @@
-from ..interfaces.IDataSource import IDataSource
+from ..interfaces.ISource import ISource
 
 
-class ITransformer(IDataSource):
+class ITransformer(ISource):
 
 
     def __init__(self,src):

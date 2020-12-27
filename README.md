@@ -5,4 +5,4 @@
 
 ## Architecture Diagram
 
-![Architecture](./docs/arch_diagram.png)
+![Architecture](docs/bumblebee_arch_diagram.png)

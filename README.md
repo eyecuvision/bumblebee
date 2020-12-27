@@ -2,13 +2,27 @@
 
 ![Bumblebee image](./docs/bumblebee.png)
 
+## Install
+
+```
+pip install eyecu_bumblebee
+```
+
+## Our Website
+
+[a link](https://eyecuvision.com/)
+[a link](https://eyecufuture.com/)
+
 
 ## Architecture Diagram
 
 ![Architecture](docs/bumblebee_arch_diagram.png)
 
 
+
+
 ## Example Pipeline
+
 
 ```python
 from bumblebee import *

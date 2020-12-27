@@ -40,7 +40,7 @@ class FramesAndDifferences(IDataset):
         self.current_frame = super().__next__()
         self.differences.append(self.current_frame - self.frames[-1])
 
-        output = np.zeros(2, self.batch_size, *self.src.get_props())
+        output = np.zeros((2, self.batch_size, *self.src.get_props()))
 
         for i in range(self.batch_size):
             output[0, i] = self.frames[i]

@@ -12,9 +12,6 @@ class SingleFrame(IDataset):
 
         self.src = data_source
 
-    def __getitem__(self, item):
-        return self.__next__()
-
     def __iter__(self):
         return self
 

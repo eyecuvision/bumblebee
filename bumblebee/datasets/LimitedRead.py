@@ -11,8 +11,8 @@ class LimitedRead(IDataset):
         self.src = src
         self.remaining_frames = total_frames
 
-    def __getitem__(self, item):
-        return self.__next__()
+    def get_props(self):
+        return self.src.get_props()
 
     def __iter__(self):
         return self

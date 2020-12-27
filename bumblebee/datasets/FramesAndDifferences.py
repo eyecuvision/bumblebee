@@ -5,7 +5,7 @@ from ..interfaces.IDataset import IDataset
 
 class FramesAndDifferences(IDataset):
 
-    def __init__(self,src : IDataset,batch_size = 64):
+    def __init__(self, src: IDataset, batch_size=64):
 
         self.src = src
 
@@ -15,16 +15,11 @@ class FramesAndDifferences(IDataset):
         self.current_frame = None
         self._readfirstbatch()
 
-
     def get_props(self):
-        return self.batch_size,*self.src.get_props()
-
-    def __getitem__(self, item):
-        return self.__next__()
+        return self.batch_size, *self.src.get_props()
 
     def __iter__(self):
         return self
-
 
     def _readfirstbatch(self):
 
@@ -36,8 +31,6 @@ class FramesAndDifferences(IDataset):
             else:
                 self.current_frame = super().__next__()
 
-
-
     def __len__(self):
         return self.batch_size
 
@@ -47,11 +40,10 @@ class FramesAndDifferences(IDataset):
         self.current_frame = super().__next__()
         self.differences.append(self.current_frame - self.frames[-1])
 
-        output = torch.zeros(2,self.batch_size, *self.src.get_props())
+        output = torch.zeros(2, self.batch_size, *self.src.get_props())
 
         for i in range(self.batch_size):
-            output[0,i] = self.frames[i]
-            output[1,i] = self.differences[i]
+            output[0, i] = self.frames[i]
+            output[1, i] = self.differences[i]
 
         return output
-

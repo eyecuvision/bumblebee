@@ -5,29 +5,23 @@ from ..interfaces.IDataset import IDataset
 
 class BatchReading(IDataset):
 
-    def __init__(self,src : IDataset,batch_size = 64):
+    def __init__(self, src: IDataset, batch_size=64):
 
         self.src = src
         self.batch_size = batch_size
         self.batch = []
         self._readfirstbatch()
 
-
     def get_props(self):
-        return self.batch_size,*self.src.get_props()
-
-    def __getitem__(self, item):
-        return self.__next__()
+        return self.batch_size, *self.src.get_props()
 
     def __iter__(self):
         return self
-
 
     def _readfirstbatch(self):
 
         for i in range(self.batch_size):
             self.batch.append(super().__next__())
-
 
     def __len__(self):
         return self.batch_size
@@ -44,4 +38,3 @@ class BatchReading(IDataset):
             output[i] = self.batch[i]
 
         return output
-

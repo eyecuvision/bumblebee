@@ -2,12 +2,13 @@
 
 class IDataset:
 
-    def __getitem__(self, item):
-        abstract
     def __iter__(self):
         abstract
 
     def __len__(self):
+        abstract
+
+    def get_props(self):
         abstract
 
     def __next__(self):
@@ -18,5 +19,9 @@ class IDataset:
         except Exception:
             raise StopIteration()
 
-    def get_props(self):
-        return self.src.get_props()
+    def __getitem__(self, item):
+        return self.__next__()
+
+    def read(self):
+        return self.__next__()
+

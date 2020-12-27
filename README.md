@@ -10,8 +10,8 @@ pip install eyecu_bumblebee
 
 ## Our Website
 
-[a link](https://eyecuvision.com/)
-[a link](https://eyecufuture.com/)
+[EyeCU Vision](https://eyecuvision.com/) \
+[EyeCU Future](https://eyecufuture.com/) \
 
 
 ## Architecture Diagram

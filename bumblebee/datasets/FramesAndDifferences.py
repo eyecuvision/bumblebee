@@ -47,7 +47,7 @@ class FramesAndDifferences(IDataset):
         self.current_frame = self.src.__next__()
         self.differences.append(self.current_frame - self.frames[-1])
 
-        output = torch.zeros(2,self.batch_size, *self.dims)
+        output = torch.zeros(2,self.batch_size, *self.src.get_props())
 
         for i in range(self.batch_size):
             output[0,i] = self.frames[i]

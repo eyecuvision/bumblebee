@@ -8,14 +8,13 @@ class BatchReading(IDataset):
     def __init__(self,src : IDataset,batch_size = 64):
 
         self.src = src
-
         self.batch_size = batch_size
         self.batch = []
         self._readfirstbatch()
 
 
     def get_props(self):
-        return (self.batch_size,*self.src.get_props())
+        return self.batch_size,*self.src.get_props()
 
     def __getitem__(self, item):
         return self.__next__()
@@ -39,7 +38,7 @@ class BatchReading(IDataset):
         self.batch.append(next_frame)
         self.batch.pop(0)
 
-        output = torch.zeros(self.batch_size, *self.dims)
+        output = torch.zeros(self.batch_size, *self.src.get_props())
 
         for i in range(self.batch_size):
             output[i] = self.batch[i]

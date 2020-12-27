@@ -31,10 +31,10 @@ class FramesAndDifferences(IDataset):
         for i in range(self.batch_size):
             if self.current_frame:
                 self.frames.append(self.current_frame)
-                self.current_frame = self.src.__next__()
+                self.current_frame = super().__next__()
                 self.differences = self.current_frame - self.frames[-1]
             else:
-                self.current_frame = self.src.__next__()
+                self.current_frame = super().__next__()
 
 
 

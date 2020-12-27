@@ -26,7 +26,7 @@ class BatchReading(IDataset):
     def _readfirstbatch(self):
 
         for i in range(self.batch_size):
-            self.batch.append(self.src.__next__())
+            self.batch.append(super().__next__())
 
 
     def __len__(self):

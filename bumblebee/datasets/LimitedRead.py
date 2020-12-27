@@ -26,4 +26,4 @@ class LimitedRead(IDataset):
             raise StopIteration()
         else:
             self.remaining_frames -= 1
-            return super.__next__()
+            return super().__next__()

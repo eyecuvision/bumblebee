@@ -25,6 +25,6 @@ class SingleFrame(IDataset):
         return 1
 
     def __next__(self):
-        return torch.from_numpy(self.src.read())
+        return torch.from_numpy(super().__next__())
 
 

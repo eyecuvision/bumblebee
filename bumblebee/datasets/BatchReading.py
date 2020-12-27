@@ -33,7 +33,7 @@ class BatchReading(IDataset):
         return self.batch_size
 
     def __next__(self):
-        next_frame = self.src.__next__()
+        next_frame = super().__next__()
 
         self.batch.append(next_frame)
         self.batch.pop(0)

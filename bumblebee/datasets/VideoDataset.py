@@ -34,7 +34,7 @@ class VideoDataset(IDataset):
         return 1
 
     def __next__(self):
-        next_frame = self.src.read()
+        next_frame = super().__next__()
         self.frames.append(next_frame)
         self.frames.pop(0)
 

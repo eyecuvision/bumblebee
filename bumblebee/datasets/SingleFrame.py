@@ -19,7 +19,7 @@ class SingleFrame(IDataset):
         return self
 
     def get_props(self):
-        return (1,*self.src.get_props())
+        return 1, *self.src.get_props()
 
     def __len__(self):
         return 1

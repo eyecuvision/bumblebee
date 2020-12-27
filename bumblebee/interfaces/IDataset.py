@@ -14,9 +14,9 @@ class IDataset:
 
         try:
             data = self.src.read()
-        except Exception:
             return data
-
+        except Exception:
+            raise StopIteration()
 
     def get_props(self):
         return self.src.get_props()

@@ -17,7 +17,7 @@ class FramesAndDifferences(IDataset):
 
 
     def get_props(self):
-        return (self.batch_size,*self.src.get_props())
+        return self.batch_size,*self.src.get_props()
 
     def __getitem__(self, item):
         return self.__next__()
@@ -44,7 +44,7 @@ class FramesAndDifferences(IDataset):
     def __next__(self):
 
         self.frames.append(self.current_frame)
-        self.current_frame = self.src.__next__()
+        self.current_frame = super().__next__()
         self.differences.append(self.current_frame - self.frames[-1])
 
         output = torch.zeros(2,self.batch_size, *self.src.get_props())

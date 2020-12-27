@@ -1,5 +1,3 @@
-import torch
-
 from typing import Union
 from ..interfaces import ITransformer
 from ..interfaces.ISource import ISource
@@ -21,7 +19,5 @@ class SingleFrame(IDataset):
     def __len__(self):
         return 1
 
-    def __next__(self):
-        return torch.from_numpy(super().__next__())
 
 

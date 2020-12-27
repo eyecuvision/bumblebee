@@ -1,4 +1,4 @@
-import torch
+import numpy as np
 
 from ..interfaces.IDataset import IDataset
 
@@ -32,7 +32,7 @@ class BatchReading(IDataset):
         self.batch.append(next_frame)
         self.batch.pop(0)
 
-        output = torch.zeros(self.batch_size, *self.src.get_props())
+        output = np.zeros(self.batch_size, *self.src.get_props())
 
         for i in range(self.batch_size):
             output[i] = self.batch[i]

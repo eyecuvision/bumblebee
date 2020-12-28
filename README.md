@@ -14,7 +14,7 @@ pip install eyecu_bumblebee
 [EyeCU Future](https://eyecufuture.com/) 
 
 
-## Example Pipeline
+## Example
 
 ```python
 from bumblebee import *

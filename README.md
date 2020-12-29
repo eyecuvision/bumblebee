@@ -1,5 +1,6 @@
 # Bumblebee
-
+[![PyPI](https://img.shields.io/pypi/v/eyecu_bumblebee.svg)](https://pypi.python.org/pypi/eyecu_bumblebee)
+[![Downloads](http://pepy.tech/badge/eyecu_bumblebee)](https://static.pepy.tech/badge/eyecu_bumblebee) \
 ![Bumblebee image](./docs/bumblebee.png)
 
 ## Install

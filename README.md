@@ -9,7 +9,13 @@
 pip install eyecu_bumblebee
 ```
 
-## Our Website
+## Motto
+
+```
+Everything should be made as simple as possible, but no simpler. - Albert Einstein
+```
+
+## Our Websites
 
 [EyeCU Vision](https://eyecuvision.com/) \
 [EyeCU Future](https://eyecufuture.com/) 

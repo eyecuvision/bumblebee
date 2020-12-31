@@ -11,9 +11,7 @@ pip install eyecu_bumblebee
 
 ## Motto
 
-```
 Everything should be made as simple as possible, but no simpler. - Albert Einstein
-```
 
 ## Our Websites
 

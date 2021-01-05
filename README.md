@@ -3,13 +3,28 @@
 [![Downloads](http://pepy.tech/badge/eyecu_bumblebee)](https://pepy.tech/project/eyecu_bumblebee) \
 ![Bumblebee image](./docs/bumblebee.png)
 
+Bumblebee provides high level components to construct training pipelines for videos conveniently.
+
+
+- [Install](#install)
+- [Motivation](#motto)
+- [Our Websites](#our-websites)
+- [Examples](#examples)
+    - [A Pipeline with basic elements](#a-pipeline-with-basic-elements)
+    - [Using Manager API](#using-manager-api)
+    
+- [Team](#team)
+- [License](#license)
+
+
+
 ## Install
 
 ```
 pip install eyecu_bumblebee
 ```
 
-## Motto
+## Motivation
 
 Everything should be made as simple as possible, but no simpler. - Albert Einstein
 
@@ -19,10 +34,15 @@ Everything should be made as simple as possible, but no simpler. - Albert Einste
 [EyeCU Future](https://eyecufuture.com/) 
 
 
-## Example
+## Examples
+
+### A pipeline with basic elements
 
 ```python
 from bumblebee import *
+
+#
+
 
 if __name__ == "__main__":
     
@@ -48,7 +68,36 @@ if __name__ == "__main__":
 
 ```
 
-## Architecture Diagram
+### Using Manager API
 
-![Architecture](docs/bumblebee_arch_diagram.png)
+```python
+from bumblebee import *
+
+#
+
+
+if __name__ == "__main__":
+    
+    VIDEO_PATH = "/path/to/video.mp4"
+
+    # Create a source
+    file_stream = managers.BinaryClassification(
+        ["path/to/video_dir","path/to/another_dir"],
+        ["path/to"]
+    )
+
+    number_of_epochs = 300
+    
+    for epoch,(frame,prob) in manager(number_of_epochs):
+        # Use data stuff
+        ...    
+
+```
+
+## Team
+This project is currently developed and maintained by [ovuruska](https://github.com/ovuruska).
+
+
+## License
+Bumblebee has a MIT license. You can find further details in [LICENSE](LICENSE).
 

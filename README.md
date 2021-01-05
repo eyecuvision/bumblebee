@@ -74,8 +74,6 @@ from bumblebee import *
 
 if __name__ == "__main__":
     
-    VIDEO_PATH = "/path/to/video.mp4"
-
     # Create a training manager
     manager = managers.BinaryClassification(
         ["path/to/video_dir","path/to/another_dir"],

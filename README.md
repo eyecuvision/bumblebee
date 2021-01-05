@@ -41,8 +41,6 @@ Everything should be made as simple as possible, but no simpler. - Albert Einste
 ```python
 from bumblebee import *
 
-#
-
 
 if __name__ == "__main__":
     
@@ -73,15 +71,13 @@ if __name__ == "__main__":
 ```python
 from bumblebee import *
 
-#
-
 
 if __name__ == "__main__":
     
     VIDEO_PATH = "/path/to/video.mp4"
 
-    # Create a source
-    file_stream = managers.BinaryClassification(
+    # Create a training manager
+    manager = managers.BinaryClassification(
         ["path/to/video_dir","path/to/another_dir"],
         ["path/to/labels"]
     )

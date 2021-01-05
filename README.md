@@ -83,7 +83,7 @@ if __name__ == "__main__":
     # Create a source
     file_stream = managers.BinaryClassification(
         ["path/to/video_dir","path/to/another_dir"],
-        ["path/to"]
+        ["path/to/labels"]
     )
 
     number_of_epochs = 300

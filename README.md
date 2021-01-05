@@ -93,5 +93,5 @@ This project is currently developed and maintained by [ovuruska](https://github.
 
 
 ## License
-Bumblebee has a MIT license. You can find further details in [LICENSE](LICENSE).
+Bumblebee has MIT license. You can find further details in [LICENSE](LICENSE).
 

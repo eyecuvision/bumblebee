@@ -82,7 +82,7 @@ if __name__ == "__main__":
 
     number_of_epochs = 300
     
-    for epoch,(frame,prob) in manager(number_of_epochs):
+    for epoch,(frame_no,frame,prob) in manager(number_of_epochs):
         # Use data stuff
         ...    
 

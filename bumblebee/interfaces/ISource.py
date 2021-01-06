@@ -14,7 +14,7 @@ class ISource:
         ret, frame = self.cap.read()
 
         if not ret:
-            raise Exception("Stream {} :> Cannot get data from sources.")
+            raise IOError("Stream {} :> Cannot get data from sources.")
 
         return frame
 
@@ -26,3 +26,4 @@ class ISource:
             int(self.cap.get(cv2.CAP_PROP_FRAME_WIDTH)),
             3
         )
+

@@ -12,7 +12,7 @@ Bumblebee provides high level components to construct training pipelines for vid
 - [Examples](#examples)
     - [A Pipeline with basic elements](#a-pipeline-with-basic-elements)
     - [Using Manager API](#using-manager-api)
-    
+    - [Read Limited Section of Video](#read--limited-section-of-video)
 - [Team](#team)
 - [License](#license)
 
@@ -52,15 +52,11 @@ if __name__ == "__main__":
     # Add an effect
     goto = effects.GoTo(file_stream)
 
-    # Add some transformers
-    data = transformers.GrayScale(file_stream)
-    data = transformers.Normalization(data)
-
     END_OF_VIDEO = file_stream.get_duration()
     goto(END_OF_VIDEO)
 
     # Create a dataset
-    single_frame = datasets.SingleFrame(data)
+    single_frame = datasets.SingleFrame(file_stream)
 
     last_frame = single_frame.read()
 
@@ -85,6 +81,29 @@ if __name__ == "__main__":
     for epoch,(frame_no,frame,prob) in manager(number_of_epochs):
         # Use data stuff
         ...    
+
+```
+
+
+### Read  limited section of video
+```python
+from bumblebee import *
+from
+if __name__ == "__main__":
+  
+    VIDEO_PATH = "/path/to/video.mp4"
+    start_frame = 35
+    end_frame = 40
+    
+    file_stream = sources.FileStream(VIDEO_PATH)
+    
+    limited_stream = effects.Start(file_stream,start_frame)
+    limited_stream = effects.End(limited_stream,end_frame)
+
+    single_frame = datasets.SingleFrame(file_stream)
+
+    for frame in single_frame:
+        ...  
 
 ```
 

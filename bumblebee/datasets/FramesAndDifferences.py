@@ -1,6 +1,6 @@
 import numpy as np
 
-from ..interfaces.IDataset import IDataset
+from ..bases.IDataset import IDataset
 
 
 class FramesAndDifferences(IDataset):

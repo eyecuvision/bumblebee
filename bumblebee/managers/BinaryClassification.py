@@ -1,7 +1,7 @@
 from typing import Union, List
 import os
 from random import choice
-from ..interfaces import IManager
+from ..bases import IManager
 from ..sources import FileStream
 from logging import warning,info
 

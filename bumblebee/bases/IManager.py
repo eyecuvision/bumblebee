@@ -1,9 +1,8 @@
 from typing import Union, List
 import os
 
+
 class IManager:
-
-
 
     def __iter__(self):
         abstract
@@ -13,6 +12,3 @@ class IManager:
 
     def __call__(self, episodes: int):
         abstract
-
-
-

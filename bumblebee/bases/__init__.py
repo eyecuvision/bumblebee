@@ -1,5 +1,4 @@
 from .IDataset import IDataset
-from .ISource import ISource
-from .ITransformer import ITransformer
+from .Source import Source
 from .IEffect import IEffect
 from .IManager import IManager

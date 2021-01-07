@@ -1,9 +1,9 @@
 import cv2
 
-from ..interfaces.ISource import ISource
+from ..bases.Source import Source
 
 
-class WebStream(ISource):
+class WebStream(Source):
 
     def __init__(self, url):
         super().__init__()

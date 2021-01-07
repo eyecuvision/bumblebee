@@ -1,9 +1,9 @@
 import cv2
 
-from ..interfaces.ISource import ISource
+from ..bases.Source import Source
 
 
-class FileStream(ISource):
+class FileStream(Source):
 
     def __init__(self, filepath: str):
         super().__init__()
@@ -21,3 +21,6 @@ class FileStream(ISource):
 
     def close(self):
         self.cap.release()
+
+    def __getitem__(self, item : int):
+        self.cap.set(cv2.CAP_PROP_POS_FRAMES,item)

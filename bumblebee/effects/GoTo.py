@@ -1,7 +1,7 @@
 import cv2
 
 from ..sources import FileStream
-from ..interfaces import IEffect
+from ..bases import IEffect
 
 
 class GoTo(IEffect):

@@ -2,10 +2,8 @@ import cv2
 import numpy as np
 import win32gui, win32ui, win32con, win32api
 
-from ..interfaces.ISource import ISource
 
-
-class WindowStream(ISource):
+class WindowStream:
 
     def __init__(self, region=None):
 
@@ -19,8 +17,6 @@ class WindowStream(ISource):
             self.height = win32api.GetSystemMetrics(win32con.SM_CYVIRTUALSCREEN)
             self.left = win32api.GetSystemMetrics(win32con.SM_XVIRTUALSCREEN)
             self.top = win32api.GetSystemMetrics(win32con.SM_YVIRTUALSCREEN)
-
-
 
     def read(self):
 
@@ -45,18 +41,17 @@ class WindowStream(ISource):
         return cv2.cvtColor(img, cv2.COLOR_RGBA2RGB)
 
     def get_props(self):
-        return self.height,self.width,4
+        return self.height, self.width, 4
 
 
 if __name__ == "__main__":
 
-
-    stream = WindowStream([0,25,800,625])
+    stream = WindowStream([0, 25, 800, 625])
 
     while True:
 
         image = stream.read()
-        cv2.imshow("window_stream",image)
+        cv2.imshow("window_stream", image)
         key = cv2.waitKey(1)
         if key in [ord("q")]:
             break

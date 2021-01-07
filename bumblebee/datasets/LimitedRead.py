@@ -1,12 +1,11 @@
 from typing import Union
-from ..interfaces import IDataset
-from ..interfaces import ISource
-from ..interfaces import ITransformer
+from ..bases import IDataset
+from ..bases import Source
 
 
 class LimitedRead(IDataset):
 
-    def __init__(self, src: Union[IDataset, ISource, ITransformer], total_frames: int):
+    def __init__(self, src: Union[IDataset, Source], total_frames: int):
 
         self.src = src
         self.remaining_frames = total_frames

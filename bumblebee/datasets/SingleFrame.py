@@ -1,12 +1,11 @@
 from typing import Union
-from ..interfaces import ITransformer
-from ..interfaces.ISource import ISource
-from ..interfaces.IDataset import IDataset
+from ..bases.Source import Source
+from ..bases.IDataset import IDataset
 
 
 class SingleFrame(IDataset):
 
-    def __init__(self, data_source : Union[ISource,ITransformer]):
+    def __init__(self, data_source : Union[Source]):
 
         self.src = data_source
 

@@ -1,5 +1,8 @@
 from unittest import TestCase
-from bumblebee.datasets import Batch
+
+import torch
+
+from bumblebee.datasets import TorchBatch
 from bumblebee.effects import GoTo, CurrentFrame
 from bumblebee.sources import FileStream
 import os
@@ -7,7 +10,7 @@ import os
 import numpy as np
 
 
-class TestBatch(TestCase):
+class TestTorchBatch(TestCase):
     ROOT_DIR = os.path.dirname(os.path.realpath(__file__))
 
     def find_difference(self, expected, result):
@@ -20,7 +23,7 @@ class TestBatch(TestCase):
 
         return "Batch is completely wrong."
 
-    def test_read(self):
+    def _test(self,device):
         batch_size = 64
 
         video_path = os.path.join(self.ROOT_DIR, "videos", "bigbuckbunnypart3.mp4")
@@ -38,7 +41,7 @@ class TestBatch(TestCase):
 
         goto(0)
 
-        batch = Batch(stream, batch_size)
+        batch = TorchBatch(stream, batch_size,device)
 
         iterator = iter(batch)
 
@@ -48,7 +51,7 @@ class TestBatch(TestCase):
 
         self.assertEqual(expected_shape, frames.shape)
 
-        self.assertTrue(np.array_equal(expected_batch, frames), self.find_difference(expected_batch, frames))
+        self.assertTrue(np.array_equal(expected_batch, frames.cpu().detach()), self.find_difference(expected_batch, frames))
 
         # Iterate to fill buffer 2*n
         for i in range(batch_size):
@@ -66,4 +69,12 @@ class TestBatch(TestCase):
         for i in range(batch_size):
             expected_batch[i] = stream.read()
 
-        self.assertTrue(np.array_equal(expected_batch, frames), self.find_difference(expected_batch, frames))
+
+        self.assertTrue(np.array_equal(expected_batch, frames.cpu().detach()), self.find_difference(expected_batch, frames))
+
+
+    def test_read_on_cuda(self):
+        self._test(torch.cuda.current_device())
+
+    def test_read_on_cpu(self):
+        self._test("cpu")

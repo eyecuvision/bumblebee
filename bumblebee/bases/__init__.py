@@ -1,4 +1,4 @@
 from .IDataset import IDataset
 from .Source import Source
-from .IEffect import IEffect
+from .Effect import Effect
 from .IManager import IManager

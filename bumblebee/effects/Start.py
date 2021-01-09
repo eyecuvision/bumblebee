@@ -3,12 +3,12 @@ from typing import Union
 import cv2
 
 from ..sources import FileStream
-from ..bases import IEffect
+from ..bases import Effect
 
 
-class Start(IEffect):
+class Start(Effect):
 
-    def __init__(self, src: Union[FileStream,IEffect], start: int):
+    def __init__(self, src: Union[FileStream, Effect], start: int):
         self.src = src
         self.cap = src.cap
         self.start = start

@@ -1,13 +1,13 @@
 from typing import Union
 
 import cv2
-from ..bases import IEffect
+from ..bases import Effect
 from ..sources import FileStream
 
 
-class Loop(IEffect):
+class Loop(Effect):
 
-    def __init__(self, src: Union[FileStream,IEffect], end_frame: int = -1, start_frame=0):
+    def __init__(self, src: Union[FileStream, Effect], end_frame: int = -1, start_frame=0):
         self.src = src
         self.end_frame = end_frame
         self.start_frame = start_frame

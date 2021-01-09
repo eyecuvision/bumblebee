@@ -3,12 +3,12 @@ from typing import Union
 import cv2
 
 from ..sources import FileStream
-from ..bases import IEffect
+from ..bases import Effect
 
 
-class CurrentFrame(IEffect):
+class CurrentFrame(Effect):
 
-    def __init__(self, src: Union[FileStream,IEffect]):
+    def __init__(self, src: Union[FileStream, Effect]):
         self.src = src
         self.cap = src.cap
 

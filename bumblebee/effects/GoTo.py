@@ -3,12 +3,12 @@ from typing import Union
 import cv2
 
 from ..sources import FileStream
-from ..bases import IEffect
+from ..bases import Effect
 
 
-class GoTo(IEffect):
+class GoTo(Effect):
 
-    def __init__(self, src: Union[FileStream,IEffect]):
+    def __init__(self, src: Union[FileStream, Effect]):
         self.src = src
 
     def __call__(self,frame_number : int,*args,**kwargs):

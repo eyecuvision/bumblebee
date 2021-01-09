@@ -5,7 +5,7 @@ from ..bases.IDataset import IDataset
 
 class SingleFrame(IDataset):
 
-    def __init__(self, data_source : Union[Source]):
+    def __init__(self, data_source ):
 
         self.src = data_source
 

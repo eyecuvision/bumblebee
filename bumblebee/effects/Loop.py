@@ -1,3 +1,5 @@
+from typing import Union
+
 import cv2
 from ..bases import IEffect
 from ..sources import FileStream
@@ -5,7 +7,7 @@ from ..sources import FileStream
 
 class Loop(IEffect):
 
-    def __init__(self, src: FileStream, end_frame: int = -1, start_frame=0):
+    def __init__(self, src: Union[FileStream,IEffect], end_frame: int = -1, start_frame=0):
         self.src = src
         self.end_frame = end_frame
         self.start_frame = start_frame

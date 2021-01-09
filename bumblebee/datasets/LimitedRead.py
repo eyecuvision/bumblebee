@@ -5,7 +5,7 @@ from ..bases import Source
 
 class LimitedRead(IDataset):
 
-    def __init__(self, src: Union[IDataset, Source], total_frames: int):
+    def __init__(self, src, total_frames: int):
 
         self.src = src
         self.remaining_frames = total_frames

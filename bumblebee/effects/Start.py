@@ -1,3 +1,5 @@
+from typing import Union
+
 import cv2
 
 from ..sources import FileStream
@@ -6,7 +8,7 @@ from ..bases import IEffect
 
 class Start(IEffect):
 
-    def __init__(self, src: FileStream, start: int):
+    def __init__(self, src: Union[FileStream,IEffect], start: int):
         self.src = src
         self.cap = src.cap
         self.start = start

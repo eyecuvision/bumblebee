@@ -5,7 +5,7 @@ from ..bases.IDataset import IDataset
 
 class FramesAndDifferences(IDataset):
 
-    def __init__(self, src: IDataset, batch_size=64):
+    def __init__(self, src, batch_size=64):
 
         self.src = src
 

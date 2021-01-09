@@ -21,3 +21,9 @@ class CurrentFrame(IEffect):
             return int(self.cap.get(cv2.CAP_PROP_POS_FRAMES))
         else:
             raise StopIteration()
+
+    def __call__(self, *args, **kwargs):
+        if self.cap.isOpened():
+            return int(self.cap.get(cv2.CAP_PROP_POS_FRAMES))
+        else:
+            raise None

@@ -1,6 +1,6 @@
 from unittest import TestCase
 from bumblebee.datasets import Batch
-from bumblebee.effects import GoTo
+from bumblebee.effects import GoTo, CurrentFrame
 from bumblebee.sources import FileStream
 import os
 
@@ -29,6 +29,7 @@ class TestBatchReading(TestCase):
         stream_props = stream.get_props()
 
         goto = GoTo(stream)
+        current_frame = CurrentFrame(stream)
 
         expected_batch = np.zeros((batch_size, *stream_props))
 
@@ -40,10 +41,29 @@ class TestBatchReading(TestCase):
         batch = Batch(stream, batch_size)
 
         iterator = iter(batch)
+
         frames = next(iterator)
 
         expected_shape = (batch_size, *stream_props)
 
         self.assertEqual(expected_shape, frames.shape)
+
+        self.assertTrue(np.array_equal(expected_batch, frames), self.find_difference(expected_batch, frames))
+
+        # Iterate to fill buffer 2*n
+        for i in range(batch_size):
+            next(iterator)
+
+        frame_ind = current_frame()
+
+        for i in range(batch_size-1):
+            next(iterator)
+
+        frames = next(iterator)
+
+        goto(frame_ind)
+
+        for i in range(batch_size):
+            expected_batch[i] = stream.read()
 
         self.assertTrue(np.array_equal(expected_batch, frames), self.find_difference(expected_batch, frames))

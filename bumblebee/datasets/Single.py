@@ -3,7 +3,7 @@ from ..bases.Source import Source
 from ..bases.IDataset import IDataset
 
 
-class SingleFrame(IDataset):
+class Single(IDataset):
 
     def __init__(self, data_source ):
 
@@ -13,7 +13,7 @@ class SingleFrame(IDataset):
         return self
 
     def get_props(self):
-        return 1, *self.src.get_props()
+        return self.src.get_props()
 
     def __len__(self):
         return 1

@@ -1,5 +1,5 @@
 from unittest import TestCase
-from bumblebee.datasets import Batch
+from bumblebee.datasets import NumpyBatch
 from bumblebee.effects import GoTo, CurrentFrame
 from bumblebee.sources import FileStream
 import os
@@ -7,7 +7,7 @@ import os
 import numpy as np
 
 
-class TestBatch(TestCase):
+class TestNumpyBatch(TestCase):
     ROOT_DIR = os.path.dirname(os.path.realpath(__file__))
 
     def find_difference(self, expected, result):
@@ -38,7 +38,7 @@ class TestBatch(TestCase):
 
         goto(0)
 
-        batch = Batch(stream, batch_size)
+        batch = NumpyBatch(stream, batch_size)
 
         iterator = iter(batch)
 

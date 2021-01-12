@@ -1,9 +1,9 @@
 from typing import Union
 from ..bases.Source import Source
-from ..bases.IDataset import IDataset
+from ..bases.Dataset import Dataset
 
 
-class Single(IDataset):
+class Single(Dataset):
 
     def __init__(self, data_source ):
 

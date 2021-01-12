@@ -1,6 +1,6 @@
 
 
-class IDataset:
+class Dataset:
 
     def __iter__(self):
         abstract

@@ -14,7 +14,7 @@ class RandomSeek(Effect):
         self.begin_offset = begin_offset
         self.end_offset = end_offset
 
-    def __call__(self,frame_number : int,*args,**kwargs):
+    def __call__(self,*args,**kwargs):
         frame_index = randint(self.begin_offset,self.duration-1 - self.end_offset)
         self.cap.set(cv2.CAP_PROP_POS_FRAMES,frame_index)
 

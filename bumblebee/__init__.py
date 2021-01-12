@@ -1,4 +1,4 @@
-__VERSION__ = "0.4.12"
+__VERSION__ = "0.4.13"
 
 from . import datasets
 from . import effects

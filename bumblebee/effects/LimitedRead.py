@@ -16,7 +16,7 @@ class LimitedRead(Effect):
     def read(self):
 
         if self.read_count == 0:
-            self.cap.release()
+            raise StopIteration()
 
         self.read_count -= 1
 

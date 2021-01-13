@@ -13,11 +13,8 @@ class Dataset:
 
     def __next__(self):
 
-        try:
-            data = self.src.read()
-            return data
-        except Exception:
-            raise StopIteration()
+        data = self.src.read()
+        return data
 
     def __getitem__(self, item):
         return self.__next__()

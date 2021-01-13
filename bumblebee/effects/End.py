@@ -13,6 +13,6 @@ class End(Effect):
 
     def read(self):
         if self.cap.get(cv2.CAP_PROP_POS_FRAMES) > self.end:
-            self.cap.release()
+            raise StopIteration()
 
         return self.src.read()

@@ -11,7 +11,6 @@ class TestLimitedRead(TestCase):
         dummy = Dummy()
         dummy.cap = Dummy()
         dummy.read = MagicMock()
-        dummy.cap.release = MagicMock()
 
         with self.assertRaises(AssertionError):
             LimitedRead(dummy, -1)
@@ -23,12 +22,10 @@ class TestLimitedRead(TestCase):
 
         limited_read.read()
 
-        dummy.cap.release.assert_not_called()
 
         limited_read.read()
 
-        dummy.cap.release.assert_not_called()
 
-        limited_read.read()
+        with self.assertRaises(StopIteration):
+            limited_read.read()
 
-        dummy.cap.release.assert_called()

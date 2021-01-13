@@ -1,6 +1,6 @@
 # Bumblebee
 [![PyPI](https://img.shields.io/pypi/v/eyecu_bumblebee.svg)](https://pypi.python.org/pypi/eyecu_bumblebee)
-[![Downloads](http://pepy.tech/badge/eyecu_bumblebee)](https://pepy.tech/project/eyecu_bumblebee) \
+[![Downloads](https://pepy.tech/badge/eyecu-bumblebee/week)](https://pepy.tech/project/eyecu-bumblebee) \
 ![Bumblebee image](./docs/bumblebee.png)
 
 Bumblebee provides high level components to construct training pipelines for videos conveniently.

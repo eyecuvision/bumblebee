@@ -23,6 +23,8 @@ class RandomSeek(Effect):
         result = new_dist(self.begin_offset, self.duration - 1 - self.end_offset)
         assert type(result) == int, "Expected distribution function to return integer."
 
+        return self
+
     def __call__(self, *args, **kwargs):
         frame_index = self._distribution(self.begin_offset, self.duration - 1 - self.end_offset)
         self.cap.set(cv2.CAP_PROP_POS_FRAMES, frame_index)

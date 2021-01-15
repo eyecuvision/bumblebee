@@ -12,6 +12,7 @@ class TestEnd(TestCase):
         dummy = Dummy()
         dummy.cap = Dummy()
         dummy.cap.get = MagicMock(side_effect=[35,36])
+        dummy.cap.set = MagicMock()
         dummy.read = MagicMock(side_effect = [None,None])
         dummy.cap.release = MagicMock()
 

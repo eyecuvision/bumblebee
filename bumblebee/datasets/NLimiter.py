@@ -26,3 +26,9 @@ class NLimiter(Dataset):
 
     def __len__(self):
         return self.N
+
+    def __getitem__(self, item):
+        return self.__next__()
+
+    def read(self):
+        return self.__next__()

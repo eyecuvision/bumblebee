@@ -38,6 +38,7 @@ class Batch(Dataset):
     def reset(self):
         self._readfirstbatch()
 
+
     def read(self):
-        return super().__next__()
+        return self.src.read()
 

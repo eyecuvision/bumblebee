@@ -9,4 +9,4 @@ class TorchBatch(Batch):
         self._readfirstbatch()
 
     def read(self):
-        return torch.from_numpy(super().read())
+        return torch.from_numpy(self.src.read())

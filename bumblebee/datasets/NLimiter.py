@@ -13,7 +13,11 @@ class NLimiter(Dataset):
         if self.rem == 0:
             raise StopIteration
         else:
-            data = self.src.read()
+            if issubclass(self.src.__class__,Dataset):
+                data = self.src.__next__()
+            else:
+                data = self.src.read()
+
             self.rem -= 1
             return data
 

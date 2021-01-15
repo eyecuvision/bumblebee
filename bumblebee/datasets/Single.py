@@ -16,7 +16,11 @@ class Single(Dataset):
         return 1
 
     def __next__(self):
-        data = self.src.read()
+        if issubclass(self.src.__class__, Dataset):
+            data = self.src.__next__()
+        else:
+            data = self.src.read()
+
         return data
 
     def __getitem__(self, item):

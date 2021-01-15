@@ -20,3 +20,10 @@ class TestNLimiter(TestCase):
         with self.assertRaises(StopIteration):
             n_limiter.read()
 
+
+
+        for ind,_ in enumerate(n_limiter):
+
+            ...
+
+        self.assertEqual(end_value-1,ind)

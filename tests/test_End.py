@@ -27,7 +27,5 @@ class TestEnd(TestCase):
 
         #Get should not be called.
         #Release should be called.
-
-        with self.assertRaises(StopIteration):
-
-            end.read()
+        end.read()
+        dummy.cap.set.assert_called()

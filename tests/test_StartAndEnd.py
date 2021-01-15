@@ -41,6 +41,5 @@ class TestStartAndEnd(TestCase):
         self.assertEqual(len(stream.cap.get.mock_calls), 6)
         stream.cap.set.assert_called_once()
 
-        with self.assertRaises(StopIteration):
-            stream.read()
+
 

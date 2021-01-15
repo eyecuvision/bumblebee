@@ -14,6 +14,5 @@ class End(Effect):
     def read(self):
         if self.cap.get(cv2.CAP_PROP_POS_FRAMES) > self.end:
             self.cap.set(cv2.CAP_PROP_POS_FRAMES,0)
-            raise StopIteration()
 
         return self.src.read()

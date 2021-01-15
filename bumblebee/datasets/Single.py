@@ -1,5 +1,3 @@
-from typing import Union
-from ..bases.Source import Source
 from ..bases.Dataset import Dataset
 
 

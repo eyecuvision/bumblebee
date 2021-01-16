@@ -7,6 +7,7 @@ class Batch(Dataset):
         self.buffer_batch_ratio = buffer_batch_ratio
         self.src = src
         self._head = 0
+        self.first_read_after_batch_read = None
 
     def get_props(self):
         return self.batch_size, *self.src.get_props()
@@ -16,31 +17,34 @@ class Batch(Dataset):
 
     def _readfirstbatch(self):
 
-        for i in range(self.batch_size - 1):
+        for i in range(self.batch_size ):
             self.batch[i] = self.read()
 
-        self._head = self.batch_size - 1
+        self._head = self.batch_size
+        self.first_read_after_batch_read = True
 
     def __len__(self):
         return self.batch_size
 
     def __next__(self):
-        next_frame = self.read()
-        self.batch[self._head] = next_frame
-        self._head += 1
 
-        if self._head == self.buffer_batch_ratio * self.batch_size:
-            self.batch[0:self.batch_size] = self.batch[-self.batch_size:]
-            self._head = self.batch_size
+        if self.first_read_after_batch_read:
+            self.first_read_after_batch_read = False
+        else:
+            next_frame = self.read()
+            self.batch[self._head] = next_frame
+            self._head += 1
+
+            if self._head == self.buffer_batch_ratio * self.batch_size:
+                self.batch[0:self.batch_size] = self.batch[-self.batch_size:]
+                self._head = self.batch_size
 
         return self.batch[self._head - self.batch_size:self._head]
 
     def reset(self):
         self._readfirstbatch()
+        self.first_read_after_batch_read = False
         return self.batch[self._head - self.batch_size:self._head]
-
-
 
     def read(self):
         return self.src.read()
-

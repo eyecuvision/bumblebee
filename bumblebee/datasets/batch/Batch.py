@@ -37,6 +37,8 @@ class Batch(Dataset):
 
     def reset(self):
         self._readfirstbatch()
+        return self.batch[self._head - self.batch_size:self._head]
+
 
 
     def read(self):

@@ -145,7 +145,7 @@ if __name__ == "__main__":
     
     file_stream = sources.FileStream(video_path)
     
-    batch = datasets.Batch(file_stream)
+    batch = datasets.Batch(file_stream, batch_size=batch_size)
     
     for frames in batch:
         ...  
